@@ -1,0 +1,134 @@
+/* Global CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #2d3748;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+/* Global Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading Animation */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #e2e8f0;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landing-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .landing-container p {
+    font-size: 0.9rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analysis-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .title-bar h1 {
+    font-size: 1.4rem;
+  }
+  
+  .analysis-header {
+    padding-top: 45px;
+  }
+  
+  .stock-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-header h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Choose Analysis Type Styles */
+.choose-analysis-type-container {
+  max-width: 500px;
+  margin: 60px auto 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  padding: 36px 32px 32px 32px;
+  animation: fadeInUp 0.7s;
+}
+.analysis-choice-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 16px rgba(79,142,247,0.13);
+  transform: translateY(-2px) scale(1.03);
+  transition: all 0.18s;
+}
+
+/* Quantitative Strategy Styles */
+.quant-strategy-container {
+  animation: fadeInUp 0.7s;
+}
+
+@media (max-width: 600px) {
+  .choose-analysis-type-container {
+    padding: 18px 6px 18px 6px;
+  }
+  .quant-strategy-container {
+    padding: 12px 2px;
+  }
+} 

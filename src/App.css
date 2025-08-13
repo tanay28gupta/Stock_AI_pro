@@ -1,0 +1,16 @@
+/* Import all component-specific CSS files */
+@import './styles/global.css';
+@import './styles/titleBar.css';
+@import './styles/landingPage.css';
+@import './styles/portfolioInput.css';
+@import './styles/analysisPage.css';
+
+/* Main App component styles (if any specific to App.js) */
+.App {
+  text-align: center;
+}
+
+/* Any additional App-specific styles can be added here */
+body, #root, .App {
+  padding-top: 50px;
+}

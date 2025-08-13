@@ -1,0 +1,107 @@
+/* TickerBar Styles */
+.ticker-bar-outer {
+  width: 100vw;
+  min-width: 320px;
+  height: 38px;
+  background: linear-gradient(90deg, #232946 0%, #2d3748 100%);
+  border-bottom: 1.5px solid #667eea33;
+  position: fixed;
+  top: 62px;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px #667eea11;
+}
+.ticker-bar-inner {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  height: 38px;
+  animation: tickerBarMove 22s linear infinite;
+}
+@keyframes tickerBarMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(102,126,234,0.10);
+  border-radius: 8px;
+  margin: 0 18px;
+  padding: 0 12px;
+  height: 28px;
+  box-shadow: 0 1px 4px #667eea22;
+}
+.ticker-bar-symbol {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.ticker-bar-price {
+  color: #f6ad55;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.ticker-bar-change.up {
+  color: #38a169;
+  margin-left: 4px;
+}
+.ticker-bar-change.down {
+  color: #e53e3e;
+  margin-left: 4px;
+}
+.ticker-bar-loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  background: rgba(30,34,44,0.92);
+  padding: 4px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #667eea22;
+}
+.ticker-bar-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #764ba2;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: tickerSpin 1s linear infinite;
+  display: inline-block;
+}
+@keyframes tickerSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.ticker-bar-error {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #e53e3e;
+  font-size: 1rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.95);
+  padding: 4px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #e53e3e22;
+  z-index: 2;
+}
+
+body {
+  padding-top: 100px;
+} 

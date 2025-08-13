@@ -1,0 +1,217 @@
+/* Analysis Page with Modern Cards */
+.analysis-container {
+  padding: 28px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.analysis-header {
+  text-align: center;
+  margin-bottom: 35px;
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+  padding-top: 14px;
+}
+
+.analysis-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.01em;
+}
+
+.analysis-header p {
+  font-size: 0.95rem;
+  color: #f7fafc;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 32px;
+  margin-top: 28px;
+  padding-bottom: 16px;
+}
+
+.portfolio-block {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(102,126,234,0.13);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+  overflow: visible;
+  min-height: 320px;
+}
+
+.portfolio-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.portfolio-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-block h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1a202c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.portfolio-icon {
+  font-size: 1.1rem;
+}
+
+.portfolio-score {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  padding: 12px;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 6px;
+  border-left: 3px solid #667eea;
+  color: #2d3748;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-score strong {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.sentiment-indicator {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-left: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sentiment-positive {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+.sentiment-negative {
+  background: linear-gradient(135deg, #f56565, #e53e3e);
+  color: white;
+}
+
+.sentiment-neutral {
+  background: linear-gradient(135deg, #ed8936, #dd6b20);
+  color: white;
+}
+
+.stocks-list {
+  list-style: none;
+  margin-top: 18px;
+  padding-right: 8px;
+}
+
+.stock-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 0;
+  border-bottom: 1.5px solid #e2e8f0;
+  transition: all 0.2s ease;
+  font-size: 1.08rem;
+}
+
+.stock-item:last-child {
+  border-bottom: none;
+}
+
+.stock-item:hover {
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 5px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.stock-ticker {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a202c;
+}
+
+.stock-sentiment {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Ticker Tape Animation */
+.ticker-tape {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  margin-bottom: 18px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 2px 8px #764ba222;
+  height: 38px;
+  position: relative;
+}
+.ticker-tape-inner {
+  display: flex;
+  width: max-content;
+  animation: tickerMove 18s linear infinite;
+  align-items: center;
+  height: 38px;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(102,126,234,0.13);
+  border-radius: 8px;
+  margin: 0 18px;
+  padding: 0 12px;
+  height: 28px;
+  box-shadow: 0 1px 4px #667eea22;
+}
+.ticker-symbol { color: #fff; font-weight: 700; letter-spacing: 1px; }
+.ticker-price { color: #f6ad55; font-weight: 700; margin-left: 4px; }
+.ticker-change.up { color: #38a169; margin-left: 4px; }
+.ticker-change.down { color: #e53e3e; margin-left: 4px; }
+@keyframes tickerMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Glowing and Pulse Effects */
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 0px #764ba2cc); }
+  100% { filter: drop-shadow(0 0 24px #764ba2cc); }
+}
+.pulse-glow {
+  animation: pulseGlow 2.2s infinite alternate;
+} 
